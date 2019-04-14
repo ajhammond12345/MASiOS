@@ -15,6 +15,17 @@
 		70FD20612262649300665132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FD205F2262649300665132 /* LaunchScreen.storyboard */; };
 		70FD206C2262649300665132 /* CoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD206B2262649300665132 /* CoverageTests.swift */; };
 		70FD20772262649300665132 /* CoverageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD20762262649300665132 /* CoverageUITests.swift */; };
+		70FD20852262722F00665132 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD20842262722F00665132 /* Login.swift */; };
+		70FD20872262723F00665132 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD20862262723F00665132 /* Register.swift */; };
+		70FD20892262726E00665132 /* CreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD20882262726E00665132 /* CreateRequest.swift */; };
+		70FD208B2262727C00665132 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD208A2262727C00665132 /* CheckIn.swift */; };
+		70FD208D2262728D00665132 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD208C2262728D00665132 /* UserList.swift */; };
+		70FD208F2262729A00665132 /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD208E2262729A00665132 /* RequestList.swift */; };
+		70FD2091226272A600665132 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD2090226272A600665132 /* UserDetail.swift */; };
+		70FD2093226272B400665132 /* RequestDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD2092226272B400665132 /* RequestDetail.swift */; };
+		70FD2095226272C000665132 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD2094226272C000665132 /* Profile.swift */; };
+		70FD20992262D79500665132 /* RequestListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD20982262D79500665132 /* RequestListCell.swift */; };
+		70FD209B2262D7A900665132 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD209A2262D7A900665132 /* UserListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,17 @@
 		70FD20722262649300665132 /* CoverageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoverageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FD20762262649300665132 /* CoverageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageUITests.swift; sourceTree = "<group>"; };
 		70FD20782262649300665132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70FD20842262722F00665132 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		70FD20862262723F00665132 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		70FD20882262726E00665132 /* CreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequest.swift; sourceTree = "<group>"; };
+		70FD208A2262727C00665132 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		70FD208C2262728D00665132 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		70FD208E2262729A00665132 /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
+		70FD2090226272A600665132 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		70FD2092226272B400665132 /* RequestDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetail.swift; sourceTree = "<group>"; };
+		70FD2094226272C000665132 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		70FD20982262D79500665132 /* RequestListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListCell.swift; sourceTree = "<group>"; };
+		70FD209A2262D7A900665132 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +123,17 @@
 			children = (
 				70FD20532262649100665132 /* AppDelegate.swift */,
 				70FD20552262649100665132 /* ViewController.swift */,
+				70FD20842262722F00665132 /* Login.swift */,
+				70FD20862262723F00665132 /* Register.swift */,
+				70FD20882262726E00665132 /* CreateRequest.swift */,
+				70FD208A2262727C00665132 /* CheckIn.swift */,
+				70FD208C2262728D00665132 /* UserList.swift */,
+				70FD209A2262D7A900665132 /* UserListCell.swift */,
+				70FD2090226272A600665132 /* UserDetail.swift */,
+				70FD208E2262729A00665132 /* RequestList.swift */,
+				70FD20982262D79500665132 /* RequestListCell.swift */,
+				70FD2092226272B400665132 /* RequestDetail.swift */,
+				70FD2094226272C000665132 /* Profile.swift */,
 				70FD20572262649100665132 /* Main.storyboard */,
 				70FD205D2262649300665132 /* Assets.xcassets */,
 				70FD205F2262649300665132 /* LaunchScreen.storyboard */,
@@ -259,9 +292,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FD209B2262D7A900665132 /* UserListCell.swift in Sources */,
 				70FD20562262649100665132 /* ViewController.swift in Sources */,
+				70FD20992262D79500665132 /* RequestListCell.swift in Sources */,
+				70FD2095226272C000665132 /* Profile.swift in Sources */,
 				70FD20542262649100665132 /* AppDelegate.swift in Sources */,
 				70FD205C2262649100665132 /* Coverage.xcdatamodeld in Sources */,
+				70FD2091226272A600665132 /* UserDetail.swift in Sources */,
+				70FD20852262722F00665132 /* Login.swift in Sources */,
+				70FD208D2262728D00665132 /* UserList.swift in Sources */,
+				70FD20872262723F00665132 /* Register.swift in Sources */,
+				70FD208B2262727C00665132 /* CheckIn.swift in Sources */,
+				70FD2093226272B400665132 /* RequestDetail.swift in Sources */,
+				70FD208F2262729A00665132 /* RequestList.swift in Sources */,
+				70FD20892262726E00665132 /* CreateRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
