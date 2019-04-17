@@ -10,16 +10,32 @@ import UIKit
 
 class UserDetail: UIViewController {
 
-    var user: String = ""
+    var location: Location?
+    var user: User?
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var phone: UILabel!
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is UserList {
+            let dest = segue.destination as? UserList
+            dest?.location = location
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = user
+        if user != nil {
+            name.text = user?.getName()
+            email.text = user?.email
+            phone.text = user?.phone
+        } else {
+            email.text = "Unable to load user"
+            name.text = ""
+            phone.text = ""
+        }
         // Do any additional setup after loading the view.
     }
     

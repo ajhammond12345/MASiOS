@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Register: UIViewController {
     @IBOutlet weak var email: UITextField!
@@ -15,6 +16,8 @@ class Register: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
+    
+    var handle: AuthStateDidChangeListenerHandle? = nil
     
     @IBAction func register(_ sender: Any) {
         let emailText = email.text
@@ -25,7 +28,11 @@ class Register: UIViewController {
         let confirmPasswordText = confirmPassword.text
         
         if emailText != nil && firstNameText != nil && lastNameText != nil && phoneText != nil && passwordText != nil && confirmPasswordText != nil && passwordText!.elementsEqual(confirmPasswordText!) {
-            //TODO: register w/ firebase
+            Auth.auth().createUser(withEmail: emailText!, password: passwordText!) { authResult, error in
+                //nothin, gets logged in below
+                
+            }
+
             performSegue(withIdentifier: "register_to_home", sender: self)
         }
     }
@@ -33,6 +40,32 @@ class Register: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                // The user's ID, unique to the Firebase project.
+                // Do NOT use this value to authenticate with your backend server,
+                // if you have one. Use getTokenWithCompletion:completion: instead.
+                let uid = user.uid
+                let emailText = self.email.text!
+                let firstNameText = self.firstName.text!
+                let lastNameText = self.lastName.text!
+                let phoneText = self.phone.text!
+                let passwordText = self.password.text!
+                let confirmPasswordText = self.confirmPassword.text!
+                let newUser = User(id: uid, first: firstNameText, last: lastNameText, emailAddress: emailText, phoneNumber: phoneText)
+                Model.model.updateUser(user: newUser)
+                Model.model.login(uid: uid)
+                
+                // ...
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
 

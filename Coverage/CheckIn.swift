@@ -10,9 +10,9 @@ import UIKit
 
 class CheckIn: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var locationSelected: String = ""
+    var locationSelected: Location?
     
-    let locationList = ["Atlanta Municipal Court", "Fulton County Court", "Gwinnet County Court"]
+    var locationList: [Location]? = nil
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -20,25 +20,29 @@ class CheckIn: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return locationList.count;
+        if (locationList != nil) {
+            return locationList!.count
+        } else {
+            return 0
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return locationList[row]
+        return locationList?[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        locationSelected = locationList[row]
+        if row < locationList?.count ?? 0 {
+            locationSelected = locationList?[row]
+        }
     }
     
     @IBOutlet weak var location: UIPickerView!
 
     @IBAction func checkIn(_ sender: Any) {
-        let locationText = locationSelected
-        
-        if locationText != "" {
-            print(locationText)
-            //check in to database
+        if locationSelected != nil {
+            locationSelected?.checkedIn?.append(Model.model.getCurrentUser()!)
+            Model.model.updateLocation(location: locationSelected!)
             performSegue(withIdentifier: "to_request_list", sender: self)
         }
     }
@@ -48,8 +52,18 @@ class CheckIn: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         location.delegate = self;
         location.dataSource = self;
+        
+        locationList = Model.model.getLocations()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is RequestList {
+            let dest = segue.destination as? RequestList
+            dest?.location = locationSelected
+            
+        }
     }
     
 

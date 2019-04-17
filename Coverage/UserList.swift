@@ -10,28 +10,33 @@ import UIKit
 
 class UserList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var userList: [String] = ["Alexander Hammond", "Evan Chase"]
-    var selectedUser: String = ""
+    var location: Location?
+    var userList: [User]?
+    var selectedUser: User?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userList.count
+        if (userList != nil) {
+            return userList!.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserListCell  else {
             fatalError("The dequeued cell is not an instance of UserListCell.")
         }
-        let user = userList[indexPath.row]
-        cell.name.text = user
+        let user = userList![indexPath.row]
+        cell.name.text = user.getName()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedUser = userList[indexPath.row]
+        selectedUser = userList![indexPath.row]
         performSegue(withIdentifier: "to_user_detail", sender: self)
     }
     
@@ -39,6 +44,7 @@ class UserList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if segue.destination is UserDetail {
             let dest = segue.destination as? UserDetail
             dest?.user = selectedUser
+            dest?.location = location
         }
     }
     
@@ -51,6 +57,13 @@ class UserList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         userTable.dataSource = self
 
         //TODO: load users into userList
+        if (location != nil) {
+            userList = location?.checkedIn
+            print(location?.checkedIn?.count ?? 0)
+            for user: User in (location?.checkedIn)! {
+                print("Loading in user \(String(describing: user.getName()))")
+            }
+        }
         
         // Do any additional setup after loading the view.
     }

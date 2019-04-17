@@ -10,9 +10,9 @@ import UIKit
 
 class CreateRequest: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var locationSelected: String = ""
+    var locationSelected: Location?
     
-    let locationList = ["Atlanta Municipal Court", "Fulton County Court", "Gwinnet County Court"]
+    var locationList: [Location]? = nil
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -20,15 +20,21 @@ class CreateRequest: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return locationList.count;
+        if (locationList != nil) {
+            return locationList!.count;
+        } else {
+            return 0
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return locationList[row]
+        return locationList?[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        locationSelected = locationList[row]
+        if row < locationList?.count ?? 0 {
+            locationSelected = locationList?[row]
+        }
     }
     
     @IBOutlet weak var location: UIPickerView!
@@ -53,12 +59,16 @@ class CreateRequest: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         let dateText = "\(day)/\(month)/\(year)"
         let todayText = "\(todayDay)/\(todayMonth)/\(todayYear)"
         let timeText = "\(hour)/\(minute)"
-        let locationText = locationSelected;
+        let locationText = locationSelected?.name;
         
         let amountText = amount.text
         
-        if (amountText != nil && dateText != "" && timeText != "" && locationText != "") {
-            //TODO: createRequest in database here
+        if (amountText != nil && amountText != "" && dateText != "" && timeText != "" && locationSelected != nil) {
+            let request = Request(user: (Model.model.getCurrentUser()?.uid)!, day: dateText, when: timeText, location: locationText!, money: amountText!)
+            
+            Model.model.updateRequest(request: request)
+            locationSelected?.requests?.append(request)
+            Model.model.updateLocation(location: locationSelected!)
             
             if dateText.elementsEqual(todayText) {
                 performSegue(withIdentifier: "create_request_to_checked_in", sender: self)
@@ -69,10 +79,19 @@ class CreateRequest: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is UserList {
+            let dest = segue.destination as? UserList
+            dest?.location = locationSelected
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.location.delegate = self
         self.location.dataSource = self
+        
+        locationList = Model.model.getLocations()
 
         // Do any additional setup after loading the view.
     }

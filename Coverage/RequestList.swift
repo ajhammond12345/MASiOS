@@ -10,33 +10,39 @@ import UIKit
 
 class RequestList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var requestList: [[String]] = [["Alexander Hammond", "Atlanta Municipal", "50.00"], ["Evan Chase", "Gwinett County", "40.00"]]
+    var location: Location?
     
-    var selectedRequest: [String] = ["", "", ""]
+    var requestList: [Request]?
+    
+    var selectedRequest: Request?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return requestList.count
+        if (requestList != nil) {
+            return requestList!.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "requestCell", for: indexPath) as? RequestListCell  else {
             fatalError("The dequeued cell is not an instance of RequestListCell.")
         }
-        let request = requestList[indexPath.row]
+        let request = requestList![indexPath.row]
         
         //TODO: update for request class
-        cell.requester.text = request[0]
-        cell.location.text = request[1]
-        cell.location.text = request[2]
+        cell.date.text = "\(request.date) \(request.time)"
+        cell.location.text = location!.name
+        cell.amount.text = request.amount
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedRequest = requestList[indexPath.row]
+        selectedRequest = requestList![indexPath.row]
         performSegue(withIdentifier: "to_request_detail", sender: self)
     }
    
@@ -44,18 +50,30 @@ class RequestList: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if segue.destination is RequestDetail {
             let dest = segue.destination as? RequestDetail
             dest?.request = selectedRequest
+            dest?.location = location
         }
     }
     
     @IBOutlet weak var requestTable: UITableView!
     
     @IBAction func checkOut(_ sender: Any) {
-        //TODO: Check out with database
+        var i: Int = 0
+        while i < location!.checkedIn!.count {
+            if location!.checkedIn![i].uid == Model.model.getCurrentUser()?.uid {
+                location?.checkedIn?.remove(at: i)
+            } else {
+                i += 1
+            }
+        }
+        Model.model.updateLocation(location: location!)
         performSegue(withIdentifier: "request_list_to_home", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (location != nil) {
+            requestList = location?.requests
+        }
         requestTable.delegate = self
         requestTable.dataSource = self
         

@@ -10,23 +10,43 @@ import UIKit
 
 class RequestDetail: UIViewController {
     
-    var request: [String] = ["", "", ""]
+    var request: Request?
+    var location: Location?
 
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var date: UILabel!
     
     @IBAction func willCover(_ sender: Any) {
         //TODO: Update database with covering list
+        request!.finalCover = Model.model.getCurrentUser()!.uid
+        Model.model.updateRequest(request: request!)
         performSegue(withIdentifier: "back_to_request_list", sender: self)
     }
+    
+    @IBAction func back(_ sender: Any) {
+        performSegue(withIdentifier: "back_to_request_list", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is RequestList {
+            let dest = segue.destination as? RequestList
+            dest?.location = location
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = request[0]
-        location.text = request[1]
-        amount.text = request[2]
+        let user: User = User(id: request!.uid)
+        Model.model.getUser(uid: request!.uid, user: user)
+        name.text = user.getName()
+        locationLabel.text = location?.name
+        amount.text = request?.amount
+        time.text = request?.time
+        date.text = request?.date
         // Do any additional setup after loading the view.
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class RequestListCell: UITableViewCell {
 
-    @IBOutlet weak var requester: UILabel!
+    @IBOutlet weak var date: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var amount: UILabel!
     override func awakeFromNib() {

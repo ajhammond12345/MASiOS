@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class Login: UIViewController {
     
@@ -20,7 +21,19 @@ class Login: UIViewController {
         
         if emailText != nil && passwordText != nil {
             //TODO: Login w/ firebase
-            performSegue(withIdentifier: "login_to_home", sender: self)
+            Auth.auth().signIn(withEmail: emailText!, password: passwordText!) {
+                [weak self] user, error in
+                guard self != nil else {
+                    return
+                }
+                if let user = user {
+                    Model.model.login(uid: user.user.uid)
+                    self!.performSegue(withIdentifier: "login_to_home", sender: self)
+                } else {
+                    //TODO: Sign in failed
+                }
+            }
+            
         }
     }
     

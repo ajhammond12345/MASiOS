@@ -56,35 +56,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPm-tf-m9R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPm-tf-m9R">
                                 <rect key="frame" x="87.5" y="236" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rqu-1W-NGT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rqu-1W-NGT">
                                 <rect key="frame" x="87.5" y="282" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Phone Number" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lkf-st-zAN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lkf-st-zAN">
                                 <rect key="frame" x="87.5" y="328.5" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-XY-KzN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qv-XY-KzN">
                                 <rect key="frame" x="87.5" y="374" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Confirm Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-sn-uha">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pLM-sn-uha">
                                 <rect key="frame" x="87.5" y="418" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvp-gK-QOs">
                                 <rect key="frame" x="159" y="456" width="57" height="30"/>
@@ -100,7 +100,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="fCI-ZM-6Dg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-7Z-3X8">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-7Z-3X8">
                                 <rect key="frame" x="87.5" y="189" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="NuH-uV-l45"/>
@@ -159,17 +159,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="620-OP-CCz">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="620-OP-CCz">
                                 <rect key="frame" x="85.5" y="274" width="204" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="E1W-Ny-OHh"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="password:" destination="PJQ-Kt-7mg" eventType="editingDidEnd" id="Bko-i9-lBK"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1p-Gw-Jwe">
                                 <rect key="frame" x="168.5" y="328.5" width="38" height="30"/>
@@ -186,7 +183,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Dti-Os-4hr"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17n-XQ-H6V">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17n-XQ-H6V">
                                 <rect key="frame" x="86" y="220" width="203" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="203" id="Y5e-hG-MYf"/>
@@ -227,7 +224,7 @@
         <!--Home Page-->
         <scene sceneID="cCR-84-ItF">
             <objects>
-                <viewController title="Home Page" id="62q-7c-grj" sceneMemberID="viewController">
+                <viewController title="Home Page" id="62q-7c-grj" customClass="ViewController" customModule="Coverage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MCa-L9-b4N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -594,7 +591,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-xT-x7X">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-xT-x7X">
                                                     <rect key="frame" x="15" y="11" width="152.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -628,8 +625,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amount" destination="1XT-JA-THv" id="Q7K-nC-NA3"/>
+                                            <outlet property="date" destination="kPE-xT-x7X" id="RTO-K4-EFa"/>
                                             <outlet property="location" destination="IRv-F3-nM8" id="N7A-zN-VfA"/>
-                                            <outlet property="requester" destination="kPE-xT-x7X" id="3D6-aE-bXv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -744,18 +741,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJh-G3-nqc">
-                                <rect key="frame" x="167" y="395" width="41" height="30"/>
-                                <state key="normal" title="Cover"/>
-                                <connections>
-                                    <action selector="willCover:" destination="ZCk-kx-phn" eventType="touchUpInside" id="jIv-pk-LhC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQ3-Xh-Rtn">
                                 <rect key="frame" x="22" y="20" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="H1Q-kT-1D8" kind="show" identifier="back_to_request_list" id="Xre-sf-eXg"/>
+                                    <action selector="back:" destination="ZCk-kx-phn" eventType="touchUpInside" id="LyO-1L-S45"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-kv-BrX">
@@ -770,10 +760,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15z-Uh-MSS">
+                                <rect key="frame" x="169.5" y="391" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJh-G3-nqc">
+                                <rect key="frame" x="167" y="447" width="41" height="30"/>
+                                <state key="normal" title="Cover"/>
+                                <connections>
+                                    <action selector="willCover:" destination="ZCk-kx-phn" eventType="touchUpInside" id="jIv-pk-LhC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fJh-G3-nqc" firstAttribute="centerX" secondItem="7VE-MR-iS0" secondAttribute="centerX" id="1db-ai-Xd7"/>
+                            <constraint firstItem="15z-Uh-MSS" firstAttribute="top" secondItem="cEv-hv-mz8" secondAttribute="bottom" constant="37" id="5Vf-PQ-Uw2"/>
+                            <constraint firstItem="fJh-G3-nqc" firstAttribute="top" secondItem="15z-Uh-MSS" secondAttribute="bottom" constant="35" id="9TJ-3C-XEi"/>
+                            <constraint firstItem="15z-Uh-MSS" firstAttribute="centerX" secondItem="7VE-MR-iS0" secondAttribute="centerX" id="GVq-RW-DJz"/>
                             <constraint firstItem="7VE-MR-iS0" firstAttribute="trailing" secondItem="sQ3-Xh-Rtn" secondAttribute="trailing" constant="319" id="M22-k7-cZs"/>
                             <constraint firstItem="cEv-hv-mz8" firstAttribute="centerY" secondItem="7VE-MR-iS0" secondAttribute="centerY" id="MVz-7e-Ae0"/>
                             <constraint firstItem="FKH-aG-GDE" firstAttribute="leading" secondItem="7VE-MR-iS0" secondAttribute="leading" id="QOr-He-zxI"/>
@@ -789,7 +795,6 @@
                             <constraint firstItem="cEv-hv-mz8" firstAttribute="top" secondItem="ldS-UB-lct" secondAttribute="bottom" constant="46" id="pN5-AY-dQb"/>
                             <constraint firstItem="7VE-MR-iS0" firstAttribute="trailing" secondItem="FKH-aG-GDE" secondAttribute="trailing" id="pj6-nN-jfw"/>
                             <constraint firstItem="FKH-aG-GDE" firstAttribute="leading" secondItem="7VE-MR-iS0" secondAttribute="leading" id="pqC-sc-DF4"/>
-                            <constraint firstItem="fJh-G3-nqc" firstAttribute="top" secondItem="cEv-hv-mz8" secondAttribute="bottom" constant="41" id="qlR-Rt-if1"/>
                             <constraint firstItem="sQ3-Xh-Rtn" firstAttribute="leading" secondItem="7VE-MR-iS0" secondAttribute="leading" constant="22" id="rCx-BY-Qvv"/>
                             <constraint firstItem="sQ3-Xh-Rtn" firstAttribute="top" secondItem="7VE-MR-iS0" secondAttribute="top" id="sWB-hm-oM2"/>
                             <constraint firstItem="FKH-aG-GDE" firstAttribute="leading" secondItem="7VE-MR-iS0" secondAttribute="leading" id="u77-yY-7fo"/>
@@ -799,9 +804,11 @@
                     </view>
                     <connections>
                         <outlet property="amount" destination="LUe-kv-BrX" id="C17-cT-6P2"/>
-                        <outlet property="location" destination="ldS-UB-lct" id="czK-1s-Hiu"/>
+                        <outlet property="date" destination="15z-Uh-MSS" id="qX1-wD-crI"/>
+                        <outlet property="locationLabel" destination="ldS-UB-lct" id="wY1-Gc-8fe"/>
                         <outlet property="name" destination="FKH-aG-GDE" id="cCb-JU-BYE"/>
                         <outlet property="time" destination="cEv-hv-mz8" id="W8V-Hj-C53"/>
+                        <segue destination="H1Q-kT-1D8" kind="show" identifier="back_to_request_list" id="vmr-Zw-NRo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maQ-s9-nld" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -810,10 +817,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sQI-ad-I1l"/>
+        <segue reference="vmr-Zw-NRo"/>
         <segue reference="CEc-z6-XCs"/>
         <segue reference="ySe-D6-4jk"/>
-        <segue reference="pZM-ir-jUQ"/>
-        <segue reference="UFO-j6-Olx"/>
+        <segue reference="jM7-0H-XYl"/>
+        <segue reference="fCI-ZM-6Dg"/>
     </inferredMetricsTieBreakers>
 </document>
