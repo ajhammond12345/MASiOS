@@ -54,11 +54,11 @@ class Request: NSObject {
         let location: String = dict["locationID"] as? String ?? ""
         let money: String = dict["amount"] as? String ?? ""
         let cover: String = dict["finalCover"] as? String ?? ""
-        let potential: NSDictionary = dict["potentialCoverage"] as? NSDictionary ?? [:]
+        let potential: NSArray = dict["potentialCoverage"] as? NSArray ?? []
         
         var userList:[String] = []
         for user in potential {
-            let tmp: String = user.value as? String ?? ""
+            let tmp: String = user as? String ?? ""
             if (tmp != "") {
                 userList.append(tmp)
             }
@@ -69,6 +69,10 @@ class Request: NSObject {
     }
     
     func toDict() -> NSDictionary {
+        let tmp: NSArray = NSArray()
+        for id in potentialCoverage ?? [] {
+            tmp.adding(id)
+        }
         return ["rid": self.rid,
                 "uid": self.uid,
                 "date": self.date,
@@ -76,7 +80,7 @@ class Request: NSObject {
                 "locationID": self.locationID,
                 "amount": self.amount,
                 "finalCover": self.finalCover,
-                "potentialCoverage": self.potentialCoverage as Any]
+                "potentialCoverage": tmp]
     }
     
 }
